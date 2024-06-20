@@ -8,7 +8,8 @@ const exercisePath = "src";
 /**
  * Don't change those lines below
  */
-export default defineConfig({
+export default defineConfig((config) => ({
+  base: config.mode === "production" ? "/bestshop" : "/",
   root: exercisePath,
   server: {
     port: 3000,
@@ -16,4 +17,4 @@ export default defineConfig({
   build: {
     outDir: "../dist",
   },
-});
+}));
